@@ -8,6 +8,7 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 一个功能强大的百度OCR API代理服务，提供智能负载均衡、健康监控、配额管理和现代化管理面板。
+官方文档地址 -> https://ai.baidu.com/ai-doc/OCR/7ktb8md0j
 
 [功能特性](#-功能特性) • [快速开始](#-快速开始) • [API文档](#-api文档) • [管理面板](#-管理面板) • [配置说明](#-配置说明)
 
