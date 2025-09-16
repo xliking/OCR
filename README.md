@@ -127,23 +127,23 @@ BAIDU_KEYS=[
   }
 ]
 
-# Redis配置
+# Redis配置 (必需)
 REDIS_URL=redis://localhost:6379
 REDIS_PASSWORD=
 
 # API认证密钥 (必需)
 API_KEY=your_secure_api_key
 
-# 配额和限制设置
+# 配额和限制设置 (默认)
 TOKEN_MAX_USES=30
 MONTHLY_QUOTA_LIMIT=1000
 QPS_LIMIT=2
 
-# 健康检查配置
+# 健康检查配置 (默认)
 MAX_CONSECUTIVE_ERRORS=3
 HEALTH_CHECK_INTERVAL=300
 
-# 百度API地址 (通常无需修改)
+# 百度API地址 (默认)
 BAIDU_TOKEN_URL=https://aip.baidubce.com/oauth/2.0/token
 BAIDU_OCR_URL=https://aip.baidubce.com/rest/2.0/ocr/v1/multiple_invoice
 ```
@@ -167,13 +167,13 @@ curl -H "API-Key: YOUR_API_KEY" ...
 
 ### 主要接口
 
-#### 1. 文件上传OCR识别
+#### 1. 文件上传OCR识别  支持 图片 和 PDF
 
 ```bash
-POST /ocr/upload_smart
+POST /ocr/upload
 Content-Type: multipart/form-data
 
-curl -X POST "http://127.0.0.1:8080/ocr/upload_smart" \
+curl -X POST "http://127.0.0.1:8080/ocr/upload" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -F "file=@invoice.jpg" \
   -F "probability=true" \
@@ -192,41 +192,6 @@ curl -X POST "http://127.0.0.1:8080/ocr/url" \
   -d '{"url": "https://example.com/image.jpg"}'
 ```
 
-#### 3. 获取Token信息
-
-```bash
-GET /token/info
-
-curl -X GET "http://127.0.0.1:8080/token/info" \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
-
-#### 4. 刷新Token
-
-```bash
-POST /token/refresh
-
-curl -X POST "http://127.0.0.1:8080/token/refresh" \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
-
-### 响应格式
-
-成功响应：
-```json
-{
-  "words_result": [...],
-  "words_result_num": 10,
-  "log_id": 1234567890
-}
-```
-
-错误响应：
-```json
-{
-  "detail": "错误描述信息"
-}
-```
 
 ## 🎛️ 管理面板
 
@@ -247,13 +212,7 @@ curl -X POST "http://127.0.0.1:8080/token/refresh" \
 2. 访问 http://127.0.0.1:8181
 3. 使用API_KEY作为密码登录
 
-### 界面预览
 
-管理面板采用现代化设计，支持：
-- 响应式布局，适配各种设备
-- 实时数据更新
-- 直观的可视化图表
-- 便捷的操作按钮
 
 ## ⚙️ 配置说明
 
