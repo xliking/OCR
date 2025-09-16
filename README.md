@@ -177,9 +177,7 @@ Content-Type: multipart/form-data
 
 curl -X POST "http://127.0.0.1:8080/ocr/upload" \
   -H "Authorization: Bearer YOUR_API_KEY" \
-  -F "file=@invoice.jpg" \
-  -F "probability=true" \
-  -F "location=true"
+  -F "file=@invoice.jpg" 
 ```
 
 #### 2. URL图片OCR识别
