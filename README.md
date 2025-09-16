@@ -1,4 +1,4 @@
-# 🚀 百度OCR API代理服务
+# 🚀 百度智能财务票据识别 OCR API代理服务
 
 <div align="center">
 
@@ -7,7 +7,7 @@
 ![Redis](https://img.shields.io/badge/Redis-5.0+-red.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-一个功能强大的百度OCR API代理服务，提供智能负载均衡、健康监控、配额管理和现代化管理面板。
+一个功能强大的百度 OCR API代理服务，提供智能负载均衡、健康监控、配额管理和现代化管理面板。
 
 👉 官方文档地址：https://ai.baidu.com/ai-doc/OCR/7ktb8md0j
 
