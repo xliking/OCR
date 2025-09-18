@@ -1119,5 +1119,4 @@ def get_dashboard_html() -> str:
 
 if __name__ == "__main__":
     print("启动百度OCR API管理面板...")
-    print("访问地址: http://127.0.0.1:8088")
-    uvicorn.run(app, host="127.0.0.1", port=8181)
+    uvicorn.run(app, host="0.0.0.0", port=8181)

@@ -1,0 +1,44 @@
+先查看系统有没有安装pip
+pip3 --version
+
+如果没有需要安装
+apt update
+apt install -y python3-pip
+
+
+安装虚拟环境工具
+apt install python3-venv
+
+
+在 ocr 项目目录下创建一个虚拟环境
+python3 -m venv venv
+
+
+激活虚拟环境
+source venv/bin/activate
+
+
+安装依赖
+pip install -r requirements.txt
+
+国内镜像源
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+
+启动服务
+sh manager.sh baidu_api.py
+sh manager.sh admin_baidu_gui.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
